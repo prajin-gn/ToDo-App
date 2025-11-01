@@ -1,6 +1,5 @@
-from todo import app, curr_date, date, db, datetime
+from todo import app, curr_date, date, db, datetime, Task
 from flask import render_template, request, redirect, url_for
-from .models import Task
 
 @app.route("/")
 @app.route("/pending")
