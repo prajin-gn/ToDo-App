@@ -4,6 +4,8 @@
   Home
 {% endblock %}
 
+{% block active_tab_complete %} active {% endblock %}
+
 {% block content %}
 <div class="d-flex justify-content-between mb-2">
   <h2>Completed</h2>
@@ -16,8 +18,8 @@
       <th scope="col">Action</th>
       <th scope="col">Task</th>
       <th scope="col">Description</th>
-      <th scope="col">Due</th>
       <th scope="col">Priority</th>
+      <th scope="col">Due</th>
     </tr>
   </thead>
   <tbody class="table-hover">

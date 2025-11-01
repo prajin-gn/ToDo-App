@@ -4,23 +4,48 @@
   Home
 {% endblock %}
 
+{% block active_tab_pending %} active {% endblock %}
+
 {% block content %}
 <div class="d-flex justify-content-between mb-2">
   <h2>Pending</h2>
   <h5>{{ curr_date }}</h5>
 </div>
 
-<table class="table table-hover table-striped">
+<table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">Action</th>
       <th scope="col">Task</th>
       <th scope="col">Description</th>
-      <th scope="col">Due</th>
       <th scope="col">Priority</th>
+      <th scope="col">Due</th>
     </tr>
   </thead>
   <tbody class="table-hover">
+    <form action="{{ url_for('add_task') }}" method="POST">
+        <tr>
+          <td>
+            <button type="submit" class="btn btn-primary">Add Task</button>
+          </td>
+          <td>
+            <input type="text" name="name" class="form-control" placeholder="Task name" required>
+          </td>
+          <td>
+            <input type="text" name="details" class="form-control" placeholder="Task Description" required>
+          </td>
+          <td>
+              <select id="priority" name="priority" class="form-select">
+                <option value="0">Low</option>
+                <option value="1">Medium</option>
+                <option value="2">High</option>
+              </select>
+          </td>
+          <td>
+            <input type="date" name="due" class="form-control" min="{{ date.today() }}" required>
+          </td>
+        </tr>
+    </form>
   </tbody>
 </table>
 {% endblock %}
