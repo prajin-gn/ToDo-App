@@ -21,7 +21,7 @@ A simple and efficient Todo application built with Flask and SQLAlchemy. This we
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/prajingn/ToDo-App.git
+git clone https://github.com/prajin-gn/ToDo-App.git
 cd ToDo-App
 ```
 
